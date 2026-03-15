@@ -86,15 +86,13 @@ namespace CouresProject.Services.Implementations
                 Description = course.Description,
                 Price = course.Price,
                 InstructorId = course.InstructorId,
-                Sections = course.Sections
-                    .OrderBy(s => s.Order)
+                Sections = System.Linq.Enumerable.OrderBy(course.Sections, (Section s) => s.Order)
                     .Select(s => new SectionDto
                     {
                         Id = s.Id,
                         Title = s.Title,
                         Order = s.Order,
-                        Lessons = s.Lessons
-                            .OrderBy(l => l.Order)
+                        Lessons = System.Linq.Enumerable.OrderBy(s.Lessons, (Lesson l) => l.Order)
                             .Select(l => new LessonDto
                             {
                                 Id = l.Id,

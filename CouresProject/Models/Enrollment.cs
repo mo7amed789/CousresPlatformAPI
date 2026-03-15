@@ -15,8 +15,8 @@
 
         // Navigation
 
-        public User User { get; set; }
+        public User User { get; set; } = null!;
 
-        public Course Course { get; set; }
+        public Course Course { get; set; } = null!;
     }
 }
