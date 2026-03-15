@@ -1,7 +1,7 @@
 ﻿using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 
-namespace CoursePlatformAPI.Services.Implementations
+namespace CouresProject.Services.Implementations
 {
     public class CloudinaryService
     {

@@ -1,6 +1,6 @@
 ﻿using CouresProject.DTOs.Lessons;
 using CouresProject.Services.Interfaces;
-using CoursePlatformAPI.Services.Implementations;
+using CouresProject.Services.Implementations;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -46,6 +46,8 @@ namespace CoursePlatformAPI.Controllers
 
             return Ok();
         }
+        [Authorize(Roles = "Instructor")]
+        [HttpPost("upload-video")]
         public async Task<IActionResult> UploadVideo(
        [FromForm] VideoUploadDto dto,
        [FromServices] CloudinaryService cloudinary)

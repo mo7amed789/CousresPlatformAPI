@@ -1,7 +1,9 @@
 using CouresProject.Data;
+using CouresProject.Middleware;
+using CouresProject.Repositories.Implementations;
+using CouresProject.Repositories.Interfaces;
 using CouresProject.Services.Implementations;
 using CouresProject.Services.Interfaces;
-using CoursePlatformAPI.Services.Implementations;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
@@ -53,11 +55,13 @@ namespace CouresProject
 
 
             builder.Services.AddScoped<IAuthService, AuthService>();
+            builder.Services.AddScoped<ICourseRepository, CourseRepository>();
             builder.Services.AddScoped<ICourseService, CourseService>();
             builder.Services.AddScoped<IEnrollmentService, EnrollmentService>();
             builder.Services.AddScoped<ISectionService, SectionService>();
             builder.Services.AddScoped<ILessonService, LessonService>();
             builder.Services.AddScoped<CloudinaryService>();
+            builder.Services.AddAuthorization();
             builder.Services.AddStackExchangeRedisCache(options =>
             {
                 options.Configuration = builder.Configuration.GetConnectionString("Redis");
@@ -84,8 +88,10 @@ namespace CouresProject
             {
                 app.MapOpenApi();
             }
+            app.UseMiddleware<ExceptionHandlingMiddleware>();
             app.UseRateLimiter();
             app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseAuthorization();
             app.MapControllers();
             app.Run();

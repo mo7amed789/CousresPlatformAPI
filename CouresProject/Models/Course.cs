@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.ViewEngines;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using static System.Collections.Specialized.BitVector32;
 
 namespace CouresProject.Models
 {
@@ -11,25 +9,25 @@ namespace CouresProject.Models
 
         [Required]
         [MaxLength(200)]
-        public string Title { get; set; }
+        public string Title { get; set; } = string.Empty;
 
-        public string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
 
         public decimal Price { get; set; }
 
-        public string Thumbnail { get; set; }
+        public string Thumbnail { get; set; } = string.Empty;
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         public int InstructorId { get; set; }
 
         [ForeignKey("InstructorId")]
-        public User Instructor { get; set; }
+        public User Instructor { get; set; } = null!;
 
-        public ICollection<Section> Sections { get; set; }
+        public ICollection<Section> Sections { get; set; } = new List<Section>();
 
-        public ICollection<Enrollment> Enrollments { get; set; }
+        public ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
 
-        public ICollection<Review> Reviews { get; set; }
+        public ICollection<Review> Reviews { get; set; } = new List<Review>();
     }
 }
