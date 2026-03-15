@@ -87,14 +87,14 @@ namespace CouresProject.Services.Implementations
                 Price = course.Price,
                 InstructorId = course.InstructorId,
                 Sections = course.Sections
-                    .OrderBy(s => s.Order)
+                    .OrderBy((Section s) => s.Order)
                     .Select(s => new SectionDto
                     {
                         Id = s.Id,
                         Title = s.Title,
                         Order = s.Order,
                         Lessons = s.Lessons
-                            .OrderBy(l => l.Order)
+                            .OrderBy((Lesson l) => l.Order)
                             .Select(l => new LessonDto
                             {
                                 Id = l.Id,
