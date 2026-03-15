@@ -1,0 +1,8 @@
+C:\Users\SUR\source\repos\CouresProject\CouresProject\obj\Debug\net10.0\CouresProject.csproj.AssemblyReference.cache
+C:\Users\SUR\source\repos\CouresProject\CouresProject\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\SUR\source\repos\CouresProject\CouresProject\obj\Debug\net10.0\CouresProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SUR\source\repos\CouresProject\CouresProject\obj\Debug\net10.0\CouresProject.AssemblyInfoInputs.cache
+C:\Users\SUR\source\repos\CouresProject\CouresProject\obj\Debug\net10.0\CouresProject.AssemblyInfo.cs
+C:\Users\SUR\source\repos\CouresProject\CouresProject\obj\Debug\net10.0\CouresProject.csproj.CoreCompileInputs.cache
+C:\Users\SUR\source\repos\CouresProject\CouresProject\obj\Debug\net10.0\CouresProject.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\SUR\source\repos\CouresProject\CouresProject\obj\Debug\net10.0\CouresProject.MvcApplicationPartsAssemblyInfo.cache
