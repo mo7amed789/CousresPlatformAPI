@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.ViewEngines;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace CouresProject.Models
 {
@@ -15,17 +14,17 @@ namespace CouresProject.Models
         public string Email { get; set; } = "";
 
         [Required]
-        public string PasswordHash { get; set; }
+        public string PasswordHash { get; set; } = string.Empty;
 
         [Required]
-        public string Role { get; set; } // Student, Instructor, Admin
+        public string Role { get; set; } = string.Empty; // Student, Instructor, Admin
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         // Navigation Properties
 
-        public ICollection<Course> CoursesCreated { get; set; }
-        public ICollection<Enrollment> Enrollments { get; set; }
-        public ICollection<Review> Reviews { get; set; }
+        public ICollection<Course> CoursesCreated { get; set; } = new List<Course>();
+        public ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
+        public ICollection<Review> Reviews { get; set; } = new List<Review>();
 
 
 

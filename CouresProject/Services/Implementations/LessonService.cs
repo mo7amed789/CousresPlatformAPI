@@ -4,7 +4,7 @@ using CouresProject.Models;
 using CouresProject.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace CoursePlatformAPI.Services.Implementations
+namespace CouresProject.Services.Implementations
 {
     public class LessonService : ILessonService
     {

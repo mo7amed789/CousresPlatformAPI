@@ -1,11 +1,13 @@
-﻿namespace CouresProject.Models
+namespace CouresProject.Models
 {
     public class Section
     {
-        public string Title { get; internal set; }
-        public int CourseId { get; internal set; }
-        public int Order { get; internal set; }
-        public object Lessons { get; internal set; }
-        public int Id { get; internal set; }
+        public int Id { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public int CourseId { get; set; }
+        public int Order { get; set; }
+
+        public Course Course { get; set; } = null!;
+        public ICollection<Lesson> Lessons { get; set; } = new List<Lesson>();
     }
 }
